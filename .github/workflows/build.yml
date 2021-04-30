@@ -13,7 +13,10 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v1
-
+      - name: set environment variables
+        uses: allenevans/set-env@v2.0.0
+        with:
+          ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES: true
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v1
         with:
@@ -26,6 +29,8 @@ jobs:
           # (No need to define this secret in the repo settings)
           github_token: ${{ secrets.github_token }}
           build_script_name: "./build.js"
+          args: ""            
+            
 
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
