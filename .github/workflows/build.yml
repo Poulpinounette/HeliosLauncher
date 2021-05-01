@@ -8,7 +8,6 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v1
@@ -17,7 +16,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10
-      - name: "Build laucher"
         run: |
           node ./build.js
       - uses: "marvinpinto/action-automatic-releases@latest"
