@@ -15,9 +15,9 @@ jobs:
         with:
           node-version: 14
       - name: Install dependencies
-        run: yarn
+        run: npm ci
       - name: build
-        run: yarn build
+        run: npm run build
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
