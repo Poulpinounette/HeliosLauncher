@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10
-        run: |
+      - run: |
           node ./build.js
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
