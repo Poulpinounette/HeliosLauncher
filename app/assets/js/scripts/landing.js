@@ -130,7 +130,10 @@ function updateSelectedAccount(authUser){
             username = authUser.displayName
         }
         if(authUser.uuid != null){
-            document.getElementById('avatarContainer').style.backgroundImage = `url('https://crafatar.com/renders/body/${authUser.uuid}')`
+            var n = document.getElementById('avatarContainer')
+            // n.childNodes.item(0)
+            n.children[0].setAttribute("src", `https://crafatar.com/renders/head/${authUser.uuid}?overlay`)
+            // document.getElementById('avatarContainer').style.backgroundImage = `url('https://crafatar.com/renders/head/${authUser.uuid}')`
         }
     }
     user_text.innerHTML = username
@@ -227,7 +230,7 @@ const refreshServerStatus = async function(fade = false){
         const serverURL = new URL('my://' + serv.getAddress())
         const servStat = await ServerStatus.getStatus(serverURL.hostname, serverURL.port)
         if(servStat.online){
-            pLabel = 'PLAYERS'
+            pLabel = 'JOUEUR'
             pVal = servStat.onlinePlayers + '/' + servStat.maxPlayers
         }
 

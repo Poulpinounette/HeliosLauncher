@@ -1,6 +1,6 @@
 {
   "name": "minenarutolaucher",
-  "version": "1.8.105",
+  "version": "1.8.106",
   "productName": "Mine-Naruto Laucher",
   "description": "Modded Minecraft Launcher",
   "author": "Daniel Scalzi (https://github.com/dscalzi/)",
@@ -48,6 +48,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Poulpinounette/HeliosLauncher.git"
+    "url": "git+https://github.com/Poulpinounette/Mine-NarutoLaucher.git"
   }
 }
