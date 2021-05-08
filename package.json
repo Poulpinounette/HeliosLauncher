@@ -5,9 +5,9 @@
   "description": "Modded Minecraft Launcher",
   "author": "Daniel Scalzi (https://github.com/dscalzi/)",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/Poulpinounette/HeliosLauncher",
+  "homepage": "https://github.com/Poulpinounette/Mine-NarutoLaucher",
   "bugs": {
-    "url": "https://github.com/Poulpinounette/HeliosLauncher/issues"
+    "url": "https://github.com/Poulpinounette/Mine-NarutoLaucher/issues"
   },
   "private": true,
   "main": "index.js",
