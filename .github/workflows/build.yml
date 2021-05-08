@@ -23,11 +23,10 @@ jobs:
       - name: build MacOs
         if: runner.os == 'macOs'
         run: npm run dist:darwin
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - uses: "xresloader/upload-to-github-release@v1"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          update_latest_release: true
           prerelease: true
-          title: "Development Build"
-          files: |
-            ./dist/*
+          file: "./dist/*"
