@@ -7,14 +7,22 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        fail-fast: false
         os: [macos-latest, ubuntu-latest, windows-latest]
         node-version: [14.x]
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: npm install
-      - name: build
-        run: npm run build
+      - name: build Windows
+        if: runner.os == 'Linux'
+        run: npm run dist:win32
+      - name: build Linux
+        if: runner.os == 'Linux'
+        run: npm run dist:linux
+      - name: build MacOs
+        if: runner.os == 'macOs'
+        run: npm run dist:darwin
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
