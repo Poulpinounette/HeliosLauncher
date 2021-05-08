@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: build Windows
-        if: runner.os == 'Linux'
+        if: runner.os == 'windows'
         run: npm run dist:win32
       - name: build Linux
         if: runner.os == 'Linux'
